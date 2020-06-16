@@ -1,6 +1,0 @@
-Tue Jun 16 20:50:18 2020 Warning test.txt has illigal chrecters check it for Ransomware.
-Tue Jun 16 20:53:23 2020 Warning test.txt has illigal chrecters check it for Ransomware.
-Tue Jun 16 20:53:27 2020 Warning test.txt has illigal chrecters check it for Ransomware.
-Tue Jun 16 20:53:31 2020 Warning test.txt has illigal chrecters check it for Ransomware.
-Tue Jun 16 20:54:29 2020 Warning test.txt has illigal chrecters check it for Ransomware.
-Tue Jun 16 20:54:33 2020 Warning test.txt has illigal chrecters check it for Ransomware.
