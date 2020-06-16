@@ -1,11 +1,14 @@
 import pathlib
 import re
 import time
-
+import threading
 
 
 
 def check_chars(path):
+    log = open('log.txt', 'a')
+
+
     with open(path) as file:  # Use file to refer to the file object
         # remove all the check in wordlist
         data = file.read()
@@ -18,42 +21,36 @@ def check_chars(path):
     data = data.replace(" ", "")
 
     if (not data.isalnum()):
-        print(str(time.ctime())+" Warning "+ path+" has illigal chrecters check it for Ransomware.\n")
+        log = open('log.txt', 'a')
+        warning = (str(time.ctime())+" Warning "+ path+" has illigal chrecters check it for Ransomware.\n")
+        print(warning)
+        log.write(warning)
+        log.close()
+
+def replase_char_with_space(word,delimeter_to_delete,delimeter_to_space):
+    word=str(word)
+    for d in delimeter_to_delete:
+        word=word.replace(d,"")
+    for d in delimeter_to_space:
+        word=word.replace(d," ")
+    return  word
+
+
 
 
 def check_dictinary(path):
+    log = open('log.txt', 'a')
     with open(path) as file:  # Use file to refer to the file object
         # remove all the check in wordlist
         data = file.read()
     data=data.lower()
-    data = data.replace(":", " ")
-    data = data.replace(",", " ")
-    data = data.replace(".", " ")
-    data = data.replace("'", "")
-    data = data.replace(";", " ")
-    data = data.replace("’", " ")
-    data = data.replace("“", " ")
-    data = data.replace("-", "")
-    data = data.replace("/", "")
-    data = data.replace("'", "")
-    data = data.replace("!", "")
-    data = data.replace("?", "")
-    data = data.replace("(", "")
-    data = data.replace(")", "")
-    data = data.replace("[", "")
-    data = data.replace("]", "")
-    data = data.replace("—", " ")
-    data = data.replace("‘", "")
-    data = data.replace("\"", "")
-    data = data.replace('”', "")
+    data =replase_char_with_space(data,":'\"-/!?()[]'‘",",.;_")
     with open("english.txt") as file:
         english_list = file.read()
 
     english_list=english_list.lower()
-    english_list = english_list.replace(":", " ")
-    english_list = english_list.replace(",", " ")
-    english_list = english_list.replace(".", " ")
-    english_list = english_list.replace("'", "")
+    english_list= replase_char_with_space(english_list,"'",".,;:")
+
 
 
     splited_data = data.split()
@@ -63,7 +60,12 @@ def check_dictinary(path):
     count= 0
     for word in splited_data:
         if len(word)>25:
-            print(str(time.ctime()) + " Warning " + path + " has more than word with a length bigger than 25 chars check it for Ransomware. The word is :"+word)
+            log = open('log.txt', 'a')
+            warning= (str(time.ctime()) + " Warning " + path + " has more than word with a length bigger than 25 chars check it for Ransomware. The word is :"+word)
+            print(warning)
+            log.write(warning)
+            log.close()
+            log.close()
         isIn = False
         for dict in english_list_splited:
             if word in dict:
@@ -75,23 +77,51 @@ def check_dictinary(path):
 
 
     if (len(illigal_words) > (len(splited_data)/20)):
-        print(str(time.ctime())+" Warning "+ path+" has more than 5% unrecognised word's that don't appere in the dictinary check it for Ransomware.")
-        print("The unrecognised words"+str(illigal_words))
+        log = open("log.txt",'a')
+        warning = (str(time.ctime())+" Warning "+ path+" has more than 5% unrecognised word's that don't appere in the dictinary check it for Ransomware.")
+        details = ("The unrecognised words"+str(illigal_words))
+        print(warning)
+        print(details)
+        log.write(warning)
+        log.write(details)
+        log.close()
 
 
 
 
-def minitor():
-    path = pathlib.Path('.')
-    for entry in path.iterdir():
-        path = str(entry)
-        if entry.is_file() and "txt" in path and path not in "english.txt":
-            check_dictinary(path)
-            check_chars(path)
+class full_monitor(threading.Thread):
+    def __init__(self):
+        threading.Thread.__init__(self)
+        self.sleep_time = 1
+
+    def run(self):
+        while True:
+            time.sleep(self.sleep_time)
+            path = pathlib.Path('.')
+            for entry in path.iterdir():
+                path = str(entry)
+                if entry.is_file() and "txt" in path and path not in "english.txt" and path not in "log.txt":
+                    check_dictinary(path)
+                    check_chars(path)
+
+class light_monitor(threading.Thread):
+    def __init__(self):
+        threading.Thread.__init__(self)
+        self.sleep_time = 1
+
+    def run(self):
+        while True:
+            time.sleep(self.sleep_time)
+            path = pathlib.Path('.')
+            for entry in path.iterdir():
+                path = str(entry)
+                if entry.is_file() and "txt" in path and path not in "english.txt" and path not in "log.txt":
+                    check_chars(path)
+
 
 
 def main() :
-    print("Service monitor created by Simon Pikalov")
+    print("Ransomware Protector created by Simon Pikalov")
     print('''----------------------//\\
 ---------------------// ¤ \\
 ---------------------\\ ¤ //
@@ -155,7 +185,10 @@ def main() :
                     if val < 0:
                         print("Not valid Input")
                     else:
-                        isLightRunning = True
+                        full = full_monitor()
+                        full.sleep_time = val
+                        full.start()
+                        isFulllRunning = True
                 except ValueError:
                     print("Not valid Input")
 
@@ -171,6 +204,9 @@ def main() :
                     if val<0:
                         print("Not valid Input")
                     else:
+                        light = light_monitor()
+                        light.sleep_time = val
+                        light.start()
                         isLightRunning = True
                 except ValueError:
                     print("Not valid Input")
