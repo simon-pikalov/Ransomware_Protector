@@ -2,6 +2,33 @@ import pathlib
 import re
 import time
 import threading
+from watchdog.observers import Observer
+from watchdog.events import FileSystemEventHandler
+
+
+class FullHandler(FileSystemEventHandler):
+    def on_modified(self, event):
+        path = str(event.src_path)
+        path=path[2:]
+        path=replase_char_with_space(path,"~","")
+
+        if  "txt" in path and path not in "english.txt" and path not in "log.txt":
+            print(f'time: {time.ctime()}event type: {event.event_type}  path : {path}')
+            check_dictinary(path)
+            check_chars(path)
+
+
+class LightHandler(FileSystemEventHandler):
+    def on_modified(self, event):
+        path = str(event.src_path)
+        path=path[2:]
+        path=replase_char_with_space(path,"~","")
+
+        if  "txt" in path and path not in "english.txt" and path not in "log.txt":
+            print(f'time: {time.ctime()}event type: {event.event_type}  path : {path}')
+            check_chars(path)
+
+
 
 
 
@@ -27,6 +54,9 @@ def check_chars(path):
         log.write(warning)
         log.close()
 
+
+# delimeter_to_delete - a str with chars you want to delete.
+# delimeter_to_space - a str with chars you want to replase withe space.
 def replase_char_with_space(word,delimeter_to_delete,delimeter_to_space):
     word=str(word)
     for d in delimeter_to_delete:
@@ -70,7 +100,7 @@ def check_dictinary(path):
         for dict in english_list_splited:
             if word in dict:
                 isIn = True
-        if isIn ==False and len(word)>1 and  not word.isalnum():
+        if isIn ==False and len(word)>1 and  not word.isnumeric():
             count+=1
             illigal_words.append(word)
 
@@ -89,34 +119,41 @@ def check_dictinary(path):
 
 
 
+
 class full_monitor(threading.Thread):
     def __init__(self):
         threading.Thread.__init__(self)
         self.sleep_time = 1
+        event_handler = FullHandler()
+        self.observer = Observer()
+        self.observer.schedule(event_handler, path='.', recursive=False)
+        self.observer.start()
 
     def run(self):
-        while True:
-            time.sleep(self.sleep_time)
-            path = pathlib.Path('.')
-            for entry in path.iterdir():
-                path = str(entry)
-                if entry.is_file() and "txt" in path and path not in "english.txt" and path not in "log.txt":
-                    check_dictinary(path)
-                    check_chars(path)
+        try:
+            while True:
+                time.sleep(self.sleep_time)
+                path = pathlib.Path('.')
+        except KeyboardInterrupt:
+            self.observer.stop()
+        self.observer.join()
 
 class light_monitor(threading.Thread):
     def __init__(self):
         threading.Thread.__init__(self)
         self.sleep_time = 1
+        event_handler = LightHandler()
+        self.observer = Observer()
+        self.observer.schedule(event_handler, path='.', recursive=False)
+        self.observer.start()
 
     def run(self):
-        while True:
-            time.sleep(self.sleep_time)
-            path = pathlib.Path('.')
-            for entry in path.iterdir():
-                path = str(entry)
-                if entry.is_file() and "txt" in path and path not in "english.txt" and path not in "log.txt":
-                    check_chars(path)
+        try:
+            while True:
+                time.sleep(self.sleep_time)
+        except KeyboardInterrupt:
+            self.observer.stop()
+        self.observer.join()
 
 
 

@@ -1,0 +1,39 @@
+Fri Jun 19 00:40:50 2020 Warning sd.txt has illigal chrecters check it for Ransomware.
+Fri Jun 19 00:40:50 2020 Warning sd.txt has illigal chrecters check it for Ransomware.
+Fri Jun 19 00:40:51 2020 Warning sd.txt has illigal chrecters check it for Ransomware.
+Fri Jun 19 00:41:04 2020 Warning sd.txt has illigal chrecters check it for Ransomware.
+Fri Jun 19 00:41:04 2020 Warning sd.txt has more than 5% unrecognised word's that don't appere in the dictinary check it for Ransomware.The unrecognised words['*asdasd']Fri Jun 19 00:41:04 2020 Warning sd.txt has illigal chrecters check it for Ransomware.
+Fri Jun 19 00:41:05 2020 Warning sd.txt has more than 5% unrecognised word's that don't appere in the dictinary check it for Ransomware.The unrecognised words['*asdasd']Fri Jun 19 00:41:05 2020 Warning sd.txt has illigal chrecters check it for Ransomware.
+Fri Jun 19 00:41:16 2020 Warning sd.txt has more than 5% unrecognised word's that don't appere in the dictinary check it for Ransomware.The unrecognised words['*asdasd']Fri Jun 19 00:41:16 2020 Warning sd.txt has illigal chrecters check it for Ransomware.
+Fri Jun 19 00:41:17 2020 Warning sd.txt has more than 5% unrecognised word's that don't appere in the dictinary check it for Ransomware.The unrecognised words['*asdasd']Fri Jun 19 00:41:17 2020 Warning sd.txt has illigal chrecters check it for Ransomware.
+Fri Jun 19 00:41:18 2020 Warning sd.txt has more than 5% unrecognised word's that don't appere in the dictinary check it for Ransomware.The unrecognised words['*asdasd']Fri Jun 19 00:41:18 2020 Warning sd.txt has illigal chrecters check it for Ransomware.
+Fri Jun 19 00:47:37 2020 Warning sd.txt has more than 5% unrecognised word's that don't appere in the dictinary check it for Ransomware.The unrecognised words['*asdasd']Fri Jun 19 00:47:37 2020 Warning sd.txt has illigal chrecters check it for Ransomware.
+Fri Jun 19 00:47:38 2020 Warning sd.txt has more than 5% unrecognised word's that don't appere in the dictinary check it for Ransomware.The unrecognised words['*asdasd']Fri Jun 19 00:47:38 2020 Warning sd.txt has illigal chrecters check it for Ransomware.
+Fri Jun 19 00:47:38 2020 Warning sd.txt has more than 5% unrecognised word's that don't appere in the dictinary check it for Ransomware.The unrecognised words['*asdasd']Fri Jun 19 00:47:38 2020 Warning sd.txt has illigal chrecters check it for Ransomware.
+Fri Jun 19 00:48:04 2020 Warning sd.txt has more than 5% unrecognised word's that don't appere in the dictinary check it for Ransomware.The unrecognised words['*asdasd']Fri Jun 19 00:48:04 2020 Warning sd.txt has illigal chrecters check it for Ransomware.
+Fri Jun 19 00:48:04 2020 Warning sd.txt has illigal chrecters check it for Ransomware.
+Fri Jun 19 00:48:05 2020 Warning sd.txt has illigal chrecters check it for Ransomware.
+Fri Jun 19 00:48:51 2020 Warning sd.txt has illigal chrecters check it for Ransomware.
+Fri Jun 19 00:48:51 2020 Warning sd.txt has illigal chrecters check it for Ransomware.
+Fri Jun 19 00:48:51 2020 Warning sd.txt has illigal chrecters check it for Ransomware.
+Fri Jun 19 00:51:55 2020 Warning sd.txt has illigal chrecters check it for Ransomware.
+Fri Jun 19 00:51:56 2020 Warning sd.txt has illigal chrecters check it for Ransomware.
+Fri Jun 19 00:51:56 2020 Warning sd.txt has illigal chrecters check it for Ransomware.
+Fri Jun 19 00:52:08 2020 Warning sd.txt has illigal chrecters check it for Ransomware.
+Fri Jun 19 00:52:09 2020 Warning sd.txt has illigal chrecters check it for Ransomware.
+Fri Jun 19 00:52:18 2020 Warning sd.txt has illigal chrecters check it for Ransomware.
+Fri Jun 19 00:52:19 2020 Warning sd.txt has more than word with a length bigger than 25 chars check it for Ransomware. The word is :ssssssssssssssssssssssssssssssssssssFri Jun 19 00:52:19 2020 Warning sd.txt has illigal chrecters check it for Ransomware.
+Fri Jun 19 00:52:19 2020 Warning sd.txt has more than word with a length bigger than 25 chars check it for Ransomware. The word is :ssssssssssssssssssssssssssssssssssssFri Jun 19 00:52:19 2020 Warning sd.txt has illigal chrecters check it for Ransomware.
+Fri Jun 19 00:53:43 2020 Warning sd.txt has more than word with a length bigger than 25 chars check it for Ransomware. The word is :ssssssssssssssssssssssssssssssssssssFri Jun 19 00:54:28 2020 Warning sd.txt has illigal chrecters check it for Ransomware.
+Fri Jun 19 00:54:29 2020 Warning sd.txt has illigal chrecters check it for Ransomware.
+Fri Jun 19 00:54:29 2020 Warning sd.txt has illigal chrecters check it for Ransomware.
+Fri Jun 19 00:54:33 2020 Warning sd.txt has illigal chrecters check it for Ransomware.
+Fri Jun 19 00:54:34 2020 Warning sd.txt has illigal chrecters check it for Ransomware.
+Fri Jun 19 00:54:34 2020 Warning sd.txt has illigal chrecters check it for Ransomware.
+Fri Jun 19 00:54:50 2020 Warning sd.txt has illigal chrecters check it for Ransomware.
+Fri Jun 19 00:54:51 2020 Warning sd.txt has illigal chrecters check it for Ransomware.
+Fri Jun 19 00:54:52 2020 Warning sd.txt has illigal chrecters check it for Ransomware.
+Fri Jun 19 00:56:25 2020 Warning sd.txt has illigal chrecters check it for Ransomware.
+Fri Jun 19 00:58:41 2020 Warning sd.txt has more than 5% unrecognised word's that don't appere in the dictinary check it for Ransomware.The unrecognised words['dasdsadsdsadsd', 'sdl', 'sdasdsadas', 'sdas', 'aslmd', 'amsd', 'ssssssssss', 'sssssssssssss', 'ssssssssssssss']Fri Jun 19 00:58:41 2020 Warning sd.txt has illigal chrecters check it for Ransomware.
+Fri Jun 19 00:58:42 2020 Warning sd.txt has more than 5% unrecognised word's that don't appere in the dictinary check it for Ransomware.The unrecognised words['dasdsadsdsadsd', 'sdl', 'sdasdsadas', 'sdas', 'aslmd', 'sdass', 'amsd', 'ssssssssss', 'sssssssssssss', 'ssssssssssssss']Fri Jun 19 00:58:42 2020 Warning sd.txt has illigal chrecters check it for Ransomware.
+Fri Jun 19 00:58:43 2020 Warning sd.txt has more than 5% unrecognised word's that don't appere in the dictinary check it for Ransomware.The unrecognised words['dasdsadsdsadsd', 'sdl', 'sdasdsadas', 'sdas', 'aslmd', 'sdass', 'amsd', 'ssssssssss', 'sssssssssssss', 'ssssssssssssss']Fri Jun 19 00:58:43 2020 Warning sd.txt has illigal chrecters check it for Ransomware.
