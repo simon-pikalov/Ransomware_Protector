@@ -52,7 +52,6 @@ This is the Output of the full Mode  .
 
 
 ### Log file (same as output): 
-This log file show's all the services running on your computer with a interval that the user chooses 
 ![](photolib/log.png)
 
 
