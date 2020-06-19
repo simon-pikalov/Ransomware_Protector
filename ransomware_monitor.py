@@ -49,7 +49,7 @@ def check_chars(path):
 
     if (not data.isalnum()):
         log = open('log.txt', 'a')
-        warning = (str(time.ctime())+" Warning "+ path+" has illigal chrecters check it for Ransomware.\n")
+        warning = ("\n"+str(time.ctime())+" Warning "+ path+" has illigal chrecters check it for Ransomware.\n")
         print(warning)
         log.write(warning)
         log.close()
@@ -88,14 +88,17 @@ def check_dictinary(path):
     illigal_words = []
 
     count= 0
+    first_length = True
     for word in splited_data:
         if len(word)>25:
-            log = open('log.txt', 'a')
-            warning= (str(time.ctime()) + " Warning " + path + " has more than word with a length bigger than 25 chars check it for Ransomware. The word is :"+word)
-            print(warning)
-            log.write(warning)
-            log.close()
-            log.close()
+            if first_length:
+                first_length=False
+                log = open('log.txt', 'a')
+                warning= (str(time.ctime()) + " Warning " + path + " :\nhas more than word with a length bigger than 25 chars check it for Ransomware.\nThe word is :"+word)
+                print(warning)
+                log.write(warning)
+                log.close()
+                log.close()
         isIn = False
         for dict in english_list_splited:
             if word in dict:
@@ -109,7 +112,7 @@ def check_dictinary(path):
     if (len(illigal_words) > (len(splited_data)/20)):
         log = open("log.txt",'a')
         warning = (str(time.ctime())+" Warning "+ path+" has more than 5% unrecognised word's that don't appere in the dictinary check it for Ransomware.")
-        details = ("The unrecognised words"+str(illigal_words))
+        details = ("The unrecognised words"+str(illigal_words[0:10]))
         print(warning)
         print(details)
         log.write(warning)
@@ -255,8 +258,8 @@ def main() :
         elif mode == "help" :
 
             print(
-                "\n\n\n@author Simon Pikalov\nThis program helps monitor system services by whriting a log file that contain all the changes in the services on you machine.\n" + menuMessege)
-
+                "\n\n\n@author Simon Pikalov\nThis program helps monitor folder txt files  by whriting a log file,\nthat contain all the changes in the file that  may be causing encryption of your data\n"
+                "for more information read the readme at https://github.com/simon-pikalov/Ransomware_Protector.\n" + menuMessege)
 
         elif mode == "exit":
                 exit()
